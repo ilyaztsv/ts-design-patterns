@@ -1,0 +1,52 @@
+{
+  "name": "ts-design-patterns",
+  "version": "0.0.1",
+  "description": "Design Patterns in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "tslint": "tslint src/**/*.ts",
+    "prettier": "prettier --parser typescript --write -l \"./**/*.ts\"",
+    "lint": "npm run prettier && npm run tslint",
+    "build": "npm run clear:dist && tsc",
+    "watch": "tsc -w",
+    "test": "jest --no-cache --config ./jest.config.js",
+    "test:coverage": "npm run test -- --coverage",
+    "test:ci": "npm run test:coverage -- --ci",
+    "ci": "npm run lint && npm run test:ci && npm run build",
+    "clear:dist": "rimraf dist",
+    "precommit": "lint-staged && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyaztsv/ts-design-patterns.git"
+  },
+  "keywords": [
+    "typescript",
+    "patterns",
+    "design-patterns"
+  ],
+  "author": "Ilya Zaytsev <https://twitter.com/ilyaztsv> (https://github.com/ilyaztsv)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilyaztsv/ts-design-patterns/issues"
+  },
+  "homepage": "https://github.com/ilyaztsv/ts-design-patterns#readme",
+  "engines": {
+    "node": ">= 7.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.5",
+    "prettier": "^1.4.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^22.4.4",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.12.0",
+    "tslint-plugin-prettier": "^1.3.0"
+  },
+  "dependencies": {
+    "typescript": "^2.8.3"
+  }
+}
