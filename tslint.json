@@ -6,7 +6,10 @@
   },
   "jsRules": {},
   "rules": {
-    "prettier": true
+    "prettier": true,
+    "no-namespace": false,
+    "max-classes-per-file": false,
+    "member-ordering": false
   },
   "rulesDirectory": ["tslint-plugin-prettier"]
 }
